@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dog"
+            type="com.example.jetpack.model.DogBreed" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:imageUrl="@{dog.url}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dogname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{dog.name}"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/dogBreed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{dog.breed_group}"
+            app:layout_constraintEnd_toEndOf="@+id/dogname"
+            app:layout_constraintStart_toStartOf="@+id/dogname"
+            app:layout_constraintTop_toBottomOf="@+id/dogname" />
+
+        <TextView
+            android:id="@+id/origin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{dog.origin}"
+            app:layout_constraintEnd_toEndOf="@+id/dogBreed"
+            app:layout_constraintStart_toStartOf="@+id/dogBreed"
+            app:layout_constraintTop_toBottomOf="@+id/dogBreed" />
+
+        <TextView
+            android:id="@+id/span"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{dog.life_span}"
+            app:layout_constraintEnd_toEndOf="@+id/origin"
+            app:layout_constraintStart_toStartOf="@+id/origin"
+            app:layout_constraintTop_toBottomOf="@+id/origin" />
+
+        <TextView
+            android:id="@+id/bred"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginTop="8dp"
+            android:text="@{dog.bred_for}"
+            app:layout_constraintEnd_toEndOf="@+id/span"
+            app:layout_constraintStart_toStartOf="@+id/span"
+            app:layout_constraintTop_toBottomOf="@+id/span" />
+
+        <TextView
+            android:id="@+id/temprament"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{dog.temperament}"
+            app:layout_constraintEnd_toEndOf="@+id/bred"
+            app:layout_constraintStart_toStartOf="@+id/bred"
+            app:layout_constraintTop_toBottomOf="@+id/bred" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
